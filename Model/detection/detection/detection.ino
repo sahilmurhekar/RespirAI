@@ -49,10 +49,10 @@ void loop() {
       Serial.print(",");
       Serial.print(x_5);
       Serial.print(",");
-      Serial.println(x_6);
-      Serial.print("Probability:");
+      Serial.print(x_6);
+      Serial.print(",");
       Serial.println(p);
-      delay(500);
+      delay(1000);
     
  
 }
