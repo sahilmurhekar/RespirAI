@@ -15,6 +15,7 @@ void setup() {
   pinMode(MQ5_D0_PIN, INPUT);
   pinMode(MQ135_D0_PIN, INPUT);
   pinMode(3,OUTPUT);
+  pinMode(2,OUTPUT);
   
   dht.begin();
 }
@@ -33,10 +34,13 @@ void loop() {
 
       float p= (exp(y))/(1+(exp(y)));
 
-      if(p>=0.50000000000){
+      if(p>=0.40000000000){
         digitalWrite(3,HIGH);
+        digitalWrite(2,HIGH);
+
       }else{
           digitalWrite(3,LOW);
+          digitalWrite(2,LOW);
         }
 
       Serial.print(x_1);
