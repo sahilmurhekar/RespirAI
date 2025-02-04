@@ -200,7 +200,7 @@ const AdminPage = () => {
 
     fetchGasData();
 
-    // Refresh data every 10 seconds
+    // Refresh data every 1 seconds
     const interval = setInterval(fetchGasData, 1000);
     return () => clearInterval(interval);
   }, [lastValidProbability, lastValidGasData]);
@@ -257,9 +257,9 @@ const AdminPage = () => {
           <h2 className="text-xl font-bold">Suffocation Probability</h2>
           <p className="text-2xl text-blue-600 font-semibold mt-2">
             {probability !== null 
-              ? `${(probability * 100).toFixed(2)}%` 
+              ? `${(probability*100).toFixed(2)}%` 
               : lastValidProbability !== null 
-                ? `${(lastValidProbability * 100).toFixed(2)}%`
+                ? `${(lastValidProbability*100).toFixed(2)}%`
                 : "N/A"
             }
           </p>

@@ -21,7 +21,7 @@ const UserCard = ({ type, displayName, percentage }: {
         </span>
         <Image src="/more.png" alt="" width={20} height={20} />
       </div>
-      <h1 className="text-2xl font-bold my-4">{percentage}%</h1>
+      <h1 className="text-2xl font-bold my-4">{percentage} ppm</h1>
       <h2 className="text-sm font-bold text-gray-700">{displayName}</h2>
     </div>
   );
