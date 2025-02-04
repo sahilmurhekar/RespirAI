@@ -11,7 +11,7 @@ const Navbar = () => {
       {/* ICONS AND USER */}
       <div className='flex items-center gap-6 justify-end w-full'>
         <div className='bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer'>
-          <Image src="/message.png" alt="" width={20} height={20}/>
+          <Image src="/mail.png" alt="" width={20} height={20}/>
         </div>
         <div className='bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative'>
           <Image src="/announcement.png" alt="" width={20} height={20}/>
