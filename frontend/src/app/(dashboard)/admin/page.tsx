@@ -1,160 +1,160 @@
-// import GasChart from "@/components/gaschart";
-// import CountChart from "@/components/CountChart";
-// import UserCard from "@/components/UserCard";
+// // import GasChart from "@/components/gaschart";
+// // import CountChart from "@/components/CountChart";
+// // import UserCard from "@/components/UserCard";
 
-// const AdminPage = () => {
-//   return (
-//     <div className="container mx-auto p-4">
-//       {/* Main Content */}
-//       <div className="w-full space-y-6">
-//         {/* Gas Cards Grid */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-//           <UserCard 
-//             type="O2" 
-//             displayName="Oxygen (O₂)"
-//             percentage="20.925"
-//           />
-//           <UserCard 
-//             type="CO2" 
-//             displayName="Carbon Dioxide (CO₂)"
-//             percentage="0.040"
-//           />
-//           <UserCard 
-//             type="H2O" 
-//             displayName="Water Vapor (H₂O)"
-//             percentage="0.250"
-//           />
-//           <UserCard 
-//             type="CO" 
-//             displayName="Carbon Monoxide (CO)"
-//             percentage="0.010"
-//           />
-//         </div>
+// // const AdminPage = () => {
+// //   return (
+// //     <div className="container mx-auto p-4">
+// //       {/* Main Content */}
+// //       <div className="w-full space-y-6">
+// //         {/* Gas Cards Grid */}
+// //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+// //           <UserCard 
+// //             type="O2" 
+// //             displayName="Oxygen (O₂)"
+// //             percentage="20.925"
+// //           />
+// //           <UserCard 
+// //             type="CO2" 
+// //             displayName="Carbon Dioxide (CO₂)"
+// //             percentage="0.040"
+// //           />
+// //           <UserCard 
+// //             type="H2O" 
+// //             displayName="Water Vapor (H₂O)"
+// //             percentage="0.250"
+// //           />
+// //           <UserCard 
+// //             type="CO" 
+// //             displayName="Carbon Monoxide (CO)"
+// //             percentage="0.010"
+// //           />
+// //         </div>
         
-//         {/* Charts Section */}
-//         <div className="flex flex-col lg:flex-row gap-4">
-//           {/* Count Chart */}
-//           <div className="w-full lg:w-1/3">
-//             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
-//               <CountChart />
-//             </div>
-//           </div>
+// //         {/* Charts Section */}
+// //         <div className="flex flex-col lg:flex-row gap-4">
+// //           {/* Count Chart */}
+// //           <div className="w-full lg:w-1/3">
+// //             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
+// //               <CountChart />
+// //             </div>
+// //           </div>
           
-//           {/* Gas Composition Chart */}
-//           <div className="w-full lg:w-2/3">
-//             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
-//               <GasChart />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+// //           {/* Gas Composition Chart */}
+// //           <div className="w-full lg:w-2/3">
+// //             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
+// //               <GasChart />
+// //             </div>
+// //           </div>
+// //         </div>
+// //       </div>
+// //     </div>
+// //   );
+// // };
 
-// export default AdminPage;
+// // export default AdminPage;
 
-// "use client";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// import GasChart from "@/components/gaschart";
-// import CountChart from "@/components/CountChart";
-// import UserCard from "@/components/UserCard";
+// // "use client";
+// // import { useState, useEffect } from "react";
+// // import axios from "axios";
+// // import GasChart from "@/components/gaschart";
+// // import CountChart from "@/components/CountChart";
+// // import UserCard from "@/components/UserCard";
 
-// const AdminPage = () => {
-//   const [gasData, setGasData] = useState(null);
-//   const [probability, setProbability] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
+// // const AdminPage = () => {
+// //   const [gasData, setGasData] = useState(null);
+// //   const [probability, setProbability] = useState(null);
+// //   const [loading, setLoading] = useState(true);
+// //   const [error, setError] = useState(null);
 
-//   useEffect(() => {
-//     const fetchGasData = async () => {
-//       try {
-//         const gasResponse = await axios.post("http://localhost:4000/api/probability/gas");
-//         setGasData(gasResponse.data);
+// //   useEffect(() => {
+// //     const fetchGasData = async () => {
+// //       try {
+// //         const gasResponse = await axios.post("http://localhost:4000/api/probability/gas");
+// //         setGasData(gasResponse.data);
         
-//         const probResponse = await axios.post("http://localhost:4000/api/probability/value");
-//         setProbability(probResponse.data.probability);
-//       } catch (err) {
-//         console.log(gasData);
-//         console.log(probability);
-//         setError("Failed to fetch sensor data");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+// //         const probResponse = await axios.post("http://localhost:4000/api/probability/value");
+// //         setProbability(probResponse.data.probability);
+// //       } catch (err) {
+// //         console.log(gasData);
+// //         console.log(probability);
+// //         setError("Failed to fetch sensor data");
+// //       } finally {
+// //         setLoading(false);
+// //       }
+// //     };
 
-//     fetchGasData();
+// //     fetchGasData();
 
-//     // Refresh data every 10 seconds
-//     const interval = setInterval(fetchGasData, 10000);
-//     return () => clearInterval(interval);
-//   }, []);
+// //     // Refresh data every 10 seconds
+// //     const interval = setInterval(fetchGasData, 10000);
+// //     return () => clearInterval(interval);
+// //   }, []);
 
-//   if (loading) return <p className="text-center mt-10 text-lg">Loading...</p>;
-//   if (error) return <p className="text-center text-red-500">{error}</p>;
+// //   if (loading) return <p className="text-center mt-10 text-lg">Loading...</p>;
+// //   if (error) return <p className="text-center text-red-500">{error}</p>;
 
-//   return (
-//     <div className="container mx-auto p-4">
-//       {/* Main Content */}
-//       <div className="w-full space-y-6">
-//         {/* Gas Cards Grid */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-//           <UserCard 
-//             type="O2" 
-//             displayName="Oxygen (O₂)"
-//             percentage="20.925"
-//           />
-//           <UserCard 
-//             type="CO2" 
-//             displayName="Carbon Dioxide (CO₂)"
-//             percentage={gasData?.CO2_Concentration || "N/A"}
-//           />
-//           <UserCard 
-//             type="H2O" 
-//             displayName="Water Vapor (H₂O)"
-//             percentage="0.250"
-//           />
-//           <UserCard 
-//             type="CO" 
-//             displayName="Carbon Monoxide (CO)"
-//             percentage={gasData?.CO_Concentration || "N/A"}
-//           />
-//         </div>
+// //   return (
+// //     <div className="container mx-auto p-4">
+// //       {/* Main Content */}
+// //       <div className="w-full space-y-6">
+// //         {/* Gas Cards Grid */}
+// //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+// //           <UserCard 
+// //             type="O2" 
+// //             displayName="Oxygen (O₂)"
+// //             percentage="20.925"
+// //           />
+// //           <UserCard 
+// //             type="CO2" 
+// //             displayName="Carbon Dioxide (CO₂)"
+// //             percentage={gasData?.CO2_Concentration || "N/A"}
+// //           />
+// //           <UserCard 
+// //             type="H2O" 
+// //             displayName="Water Vapor (H₂O)"
+// //             percentage="0.250"
+// //           />
+// //           <UserCard 
+// //             type="CO" 
+// //             displayName="Carbon Monoxide (CO)"
+// //             percentage={gasData?.CO_Concentration || "N/A"}
+// //           />
+// //         </div>
 
-//         {/* Probability Display */}
-//         <div className="bg-white shadow rounded-lg p-4 text-center">
-//           <h2 className="text-xl font-bold">Suffocation Probability</h2>
-//           <p className="text-2xl text-blue-600 font-semibold mt-2">
-//             {probability !== null ? `${(probability * 100).toFixed(2)}%` : "N/A"}
-//           </p>
-//         </div>
+// //         {/* Probability Display */}
+// //         <div className="bg-white shadow rounded-lg p-4 text-center">
+// //           <h2 className="text-xl font-bold">Suffocation Probability</h2>
+// //           <p className="text-2xl text-blue-600 font-semibold mt-2">
+// //             {probability !== null ? `${(probability * 100).toFixed(2)}%` : "N/A"}
+// //           </p>
+// //         </div>
 
-//         {/* Charts Section */}
-//         <div className="flex flex-col lg:flex-row gap-4">
-//           {/* Count Chart */}
-//           <div className="w-full lg:w-1/3">
-//             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
-//               <CountChart />
-//             </div>
-//           </div>
+// //         {/* Charts Section */}
+// //         <div className="flex flex-col lg:flex-row gap-4">
+// //           {/* Count Chart */}
+// //           <div className="w-full lg:w-1/3">
+// //             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
+// //               <CountChart />
+// //             </div>
+// //           </div>
 
-//           {/* Gas Composition Chart */}
-//           <div className="w-full lg:w-2/3">
-//             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
-//               <GasChart gasData={gasData} />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+// //           {/* Gas Composition Chart */}
+// //           <div className="w-full lg:w-2/3">
+// //             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
+// //               <GasChart gasData={gasData} />
+// //             </div>
+// //           </div>
+// //         </div>
+// //       </div>
+// //     </div>
+// //   );
+// // };
 
-// export default AdminPage;
+// // export default AdminPage;
 
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import axios from "axios";
 import GasChart from "@/components/gaschart";
 import CountChart from "@/components/CountChart";
@@ -167,6 +167,7 @@ const AdminPage = () => {
   const [lastValidProbability, setLastValidProbability] = useState(null); // Store previous valid probability
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const fetchGasData = async () => {
@@ -182,6 +183,19 @@ const AdminPage = () => {
 
         const probResponse = await axios.post("http://localhost:4000/api/probability/value");
         let probValue = parseFloat(probResponse.data.probability);
+
+        // // Play alarm if probability > 0.4
+        // if (probValue > 0.2 && audioRef.current) {
+        //   try {
+        //     audioRef.current.muted = false;
+        //     await audioRef.current.play();
+        //   } catch (audioErr) {
+        //     console.error("Audio play error:", audioErr);
+        //   }
+        // } else if (audioRef.current) {
+        //   audioRef.current.pause();
+        //   audioRef.current.currentTime = 0;
+        // }
 
         // Check if probability is a valid number
         if (!isNaN(probValue)) {
@@ -210,6 +224,8 @@ const AdminPage = () => {
 
   return (
     <div className="container mx-auto p-4">
+
+{/* <audio ref={audioRef} src="/audio.mp3" preload="auto" muted></audio> */}
       {/* Main Content */}
       <div className="w-full space-y-6">
         {/* Gas Cards Grid */}
@@ -270,13 +286,13 @@ const AdminPage = () => {
           {/* Count Chart */}
           <div className="w-full lg:w-1/3">
             <div className="bg-white rounded-lg shadow p-4 h-[400px]">
-              <CountChart />
+              <CountChart gasData={gasData || lastValidGasData}/>
             </div>
           </div>
 
           {/* Gas Composition Chart */}
           <div className="w-full lg:w-2/3">
-            <div className="bg-white rounded-lg shadow p-4 h-[400px]">
+            <div className="bg-white rounded-lg shadow p-4 h-[400px] overflow-scroll">
               <GasChart gasData={gasData || lastValidGasData} />
             </div>
           </div>
